@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="30">
+    <circle id="cir" cx="10" cy="15" r="1" fill="#328a2f">
+        <animate attributeName="cx" attributeType="XML" begin="0" dur="1s" repeatCount="indefinite" values="10;40;70;100;130;160;190;210"/>
+        <animate attributeName="r" attributeType="XML" begin="0" dur="1s" repeatCount="indefinite" values="1.5;2.5;3.5;4;5;6;7;8;9;10"/>
+    </circle>
+    <g fill="#328a2f" fill-opacity="0.3">
+        <circle cx="10" cy="15" r="1.5">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="10;11;12;13;14;15;16;17;18;19;"/>
+        </circle>
+        <circle cx="20" cy="15" r="2.5">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="20;21;22;23;24;25;26;27;28;29;"/>
+        </circle>
+        <circle cx="30" cy="15" r="3.5">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="30;31;32;33;34;35;36;37;38;39"/>
+        </circle>
+        <circle cx="40" cy="15" r="4">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="40;41;42;43;44;45;46;47;48;49;"/>
+        </circle>
+        <circle cx="50" cy="15" r="5">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="50;51;52;53;54;55;56;57;58;59;60;61"/>
+        </circle>
+        <circle cx="62" cy="15" r="6">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="62;63;64;65;66;67;68;69;70;72;74;75"/>
+        </circle>
+        <circle cx="75" cy="15" r="7">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="75;77;79;80;82;84;86;88;90;"/>
+        </circle>
+        <circle cx="90" cy="15" r="8">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="90;92;94;96;98;100;102;106;108;"/>
+        </circle>
+        <circle cx="108" cy="15" r="9">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="108;110;112;114;116;118;120;122;124;126;128;"/>
+        </circle>
+        <circle cx="128" cy="15" r="10">
+            <animate attributeName="cx" attributeType="XML" begin="0" dur="0.5s" repeatCount="indefinite" values="128;130;132;134;136;138;140;142;144;"/>
+        </circle>
+    </g>
+</svg>

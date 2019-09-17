@@ -1,0 +1,45 @@
+[
+    {
+        "Name": "React",
+        "Title": "آموزش React",
+        "IntroInfo": "در این بخش، توضیحات کاملی از ایحاد تا اجرا یک برنامه react داده می شود. به امکامات redux  و route و ... نیز پرداخته می شود.",
+        "IntroImg": "React.png",
+        "Img": "React.svg",
+        "IsNew": true,
+        "Categories":[
+            {
+                "Name":"createProject",
+                "Title":"ایجاد پروژه"
+            }
+            , {
+                "Name":"route",
+                "Title":"ایجاد مسیر"
+            }
+        ]
+    },
+    {
+        "Name": "Node",
+        "Title": "آموزش Node",
+        "IntroInfo": "در این بخش در مورد نحوه نصب برنامه Node توضیح داده خواهد شد.",
+        "IntroImg": "node.png",
+        "Img": "NodeJs.svg",
+        "IsNew": true,
+        "Categories":[
+            {
+                "Name":"createProject1",
+                "Title":"1ایجاد پروژه"
+            }
+            , {
+                "Name":"route1",
+                "Title":"1ایجاد مسیر"
+            }
+        ]
+    },
+    {
+        "Name": "آموزش Typescript",
+        "Title": "Typescript",
+        "IntroInfo": "در این بخش در مورد نحوه برنامه نویسی  در Typescript توضیح داده خواهد شد.",
+        "IntroImg": "ts.png",
+        "IsNew": true
+    }
+]

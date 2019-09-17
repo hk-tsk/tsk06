@@ -1,0 +1,54 @@
+
+$gn: rgb(0,192,0);
+$gnT: rgba(0,192,0,0);
+$dgn: rgb(0,48,0);
+$gy: rgb(128,128,128);
+$gyT: rgba(128,128,128,0);
+$bk: rgb(0,0,0);
+$bkT: rgba(0,0,0,0);
+
+.radar {
+    background:
+    /* lighting */
+        radial-gradient(100% 100%, $bkT, $bk 9.9em,$bkT 10em),
+    
+    /* lines */
+        linear-gradient($gnT 9.8em, $gn 9.8em, $gn 10.2em, $gnT 10.2em),
+        linear-gradient(45deg,$gnT 13.94em, $gn 13.98em, $gn 14.3em, $gnT 14.34em),
+        linear-gradient(90deg,$gnT 9.8em, $gn 9.8em, $gn 10.2em, $gnT 10.2em),
+        linear-gradient(-45deg,$gnT 13.94em, $gn 13.98em, $gn 14.3em, $gnT 14.34em),
+    
+    /* rings */
+    repeating-radial-gradient($dgn, $dgn 2.96em, $gn 3em, $gn 3.26em, $dgn 3.3em)
+    ;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    font-size: 10px;
+  //outline: 1px solid #aaa;
+    position: relative;
+    width: 20em;
+    height: 20em;
+    &:before {
+        animation: scan 5s linear infinite;
+        background:
+      /* frame */
+            radial-gradient($gyT 9.20em, $gy 9.25em, $gy 10em, $gyT 10.05em),
+      /* hand */
+            linear-gradient(45deg, $gnT 6em, $gn) 0 0 / 50% 50%;
+        background-repeat: no-repeat;
+      border-radius: 50%;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes scan {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}

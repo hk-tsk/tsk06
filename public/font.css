@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "BMitra";
+  src: url('font/Mitra.eot');/* IE9 Compat Modes */
+  src:  url('font/Mitra.eot?#iefix')  format('embedded-opentype'), /* IE6-IE8 */
+    url('font/Mitra.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('font/Mitra.woff') format('woff');/* Pretty Modern Browsers */
+  font-weight: 500;
+
+}
+
+@font-face {
+  font-family: "BMitra";
+  src: url('font/Mitra-Bold.eot');/* IE9 Compat Modes */
+  src:  url('font/Mitra-Bold.eot?#iefix')  format('embedded-opentype'), /* IE6-IE8 */
+    url('font/Mitra-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('font/Mitra-Bold.woff') format('woff');/* Pretty Modern Browsers */
+  font-weight: 700;
+
+}
+
+body,
+a,
+b,
+section,
+p,
+th,
+td,
+li,
+ul,
+span,
+article,
+input,
+textarea,
+select,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn,
+button {
+  font-family: 'BMitra', 'Times New Roman' ,sans-serif, tahoma !important;
+}

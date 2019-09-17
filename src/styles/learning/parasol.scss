@@ -1,0 +1,41 @@
+
+$r: rgb(255,40,40);
+$rT: rgba(255,40,40,0);
+
+$w: rgb(240,240,240);
+$wT: rgba(240,240,240,0);
+
+$o: rgb(255,180,70);
+$oT: rgba(255,180,70,0);
+
+$do: rgb(232,144,0);
+$doT: rgba(232,144,0,0);
+
+.parasol {
+    background:
+        // top
+        radial-gradient(100% 200% at 50% 100%, $r 50%, $rT 50.25%) 50% 1.5em / 9em 12em,
+        radial-gradient(100% 200% at 50% 100%, $w 50%, $wT 50.25%) 50% 1.5em / 21em 12em,
+        radial-gradient(100% 200% at 50% 100%, $r 50%, $rT 50.25%) 50% 1.5em / 30em 12em,
+
+        // pointy ends
+        radial-gradient(105% 200% at 50% 100%, $rT 49%, $r 50%) 0 13.5em / 4.5em 3em,
+        radial-gradient(105% 200% at 50% 100%, $wT 49%, $w 50%) 4.5em 13.5em / 6em 3em,
+        radial-gradient(105% 200% at 50% 100%, $rT 49%, $r 50%) 50% 13.5em / 9em 3em,
+        radial-gradient(105% 200% at 50% 100%, $wT 49%, $w 50%) 19.5em 13.5em / 6em 3em,
+        radial-gradient(105% 200% at 50% 100%, $rT 49%, $r 50%) 25.5em 13.5em / 4.5em 3em,
+
+        // pole
+        radial-gradient(200% 200% at 100% 100%, $do 49%, $doT 50%) 14em 0 / 1em 1em,
+        radial-gradient(200% 200% at 0% 100%, $o 49%, $oT 50%) 15em 0 / 1em 1em,
+        linear-gradient(90deg, $do 50%, $o 50%) 14em 1em / 2em 25em,
+        radial-gradient(100% 200% at 50% 0, $oT 0.95em, $o 1em, $o 1.95em, $do 2em, $do 2.95em, $doT 3em) 14em 26em / 6em 3em,
+        radial-gradient(200% 200% at 100% 100%, $o 49%, $oT 50%) 18em 25em / 1em 1em,
+        radial-gradient(200% 200% at 0% 100%, $do 49%, $doT 50%) 19em 25em / 1em 1em;
+
+    background-repeat: no-repeat;
+    font-size: 10px;
+    //outline: 1px solid #aaa;
+    width: 30em;
+    height: 29em;
+}

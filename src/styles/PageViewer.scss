@@ -1,0 +1,86 @@
+@import "variables.scss";
+@import "Base.scss";
+
+.page-viewer-container {
+  height: max-content;
+  width: 100%;
+  direction: $dir;
+  text-align: $textalign;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+
+  p {
+    line-height: 35px;
+  }
+
+  $pageViewerTitleHeight: 80px;
+
+  .page-viewer-title {
+    @extend .ls-title-1;
+    text-decoration: none;
+    padding-right: 50px;
+    height: $pageViewerTitleHeight;
+    text-align: center;
+  }
+
+  .page-viewer-header-img {
+    border-radius: 25px;
+    border: 5px rgb(66, 76, 228) solid;
+    height: 150px;
+    position: absolute;
+    top: calc(#{$pageViewerTitleHeight} - 70px);
+    right: 100px;
+    // left: calc((100vw / 2 ) - 75px);
+    background-color: #ffffff;
+  }
+
+  .page-viewer-wrapper {
+    border-radius: 35px;
+    border-top: 5px rgb(66, 76, 228) solid;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - #{$headerHeight});
+
+    .page-viewer-sidebar {
+      width: 20%;
+      height: 20vh;
+      min-height: 200px;
+      border: 1px solid gray;
+      position: sticky;
+      top: 80px;
+      padding: 20px;
+      margin-right: 20px;
+
+      li {
+        font-weight: 800;
+      }
+      .page-viewer-caterory-selected {
+        border-bottom: 1px gray solid;
+        font-style: italic;
+      }
+    }
+
+    .page-viewer-body {
+      width: 75%;
+      padding: 20px;
+
+      font-weight: 500;
+      height: max-content;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      .page-viewer-go-up1 {
+        position: sticky;
+        display: block;
+        left: 0px;
+        bottom: 0px;
+      }
+    }
+  }
+}
+
