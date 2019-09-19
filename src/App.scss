@@ -41,11 +41,13 @@ p {
     position: absolute;
     z-index: 1001;
     top: 12px;
-    left: 10px;
+    left: 30px;
     width: 25%;
     padding-left: 20px;
-    span {
+    span,
+    a {
       padding: 5px;
+      color: #e9ecef;
     }
   }
 }
@@ -132,6 +134,10 @@ p {
   font-size: 18px;
 }
 
+.img-not-found {
+  display: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -167,6 +173,21 @@ p {
   width: 100%;
 }
 
+// .loading {
+//   width: 100%;
+//   height: 100%;
+//   min-height: 50px;
+//   z-index: 1000;
+//   position: absolute;
+//   left: 0px;
+//   top: 0px;
+//   background-color: rgba(131, 157, 213, 0.33);
+//   background-image: url("/Images/Loading.svg");
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
+
+.img-loading ,
 .loading {
   width: 100%;
   height: 100%;
@@ -175,8 +196,8 @@ p {
   position: absolute;
   left: 0px;
   top: 0px;
-  background-color: rgba(131, 157, 213, 0.33);
-  background-image: url("/Images/Loading.svg");
+  background-color: rgba(195, 213, 131, 0);
+  background-image: url("/Images/ImgLoading.svg");
   background-position: center;
   background-repeat: no-repeat;
 }

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500">
+<style>
+.squareOuter {stroke:#098131;fill:rgba(255, 0, 0, 0);stroke-width:8}
+.squareInner { fill:#098131} 
+.lines{stroke:#098131;stroke-width:7}
+.circleInner{ fill:#098131}
+.circleOuter{stroke:#098131;fill:rgba(255, 251, 0, 0);stroke-width:10}
+.left-shade{fill:orange}
+.right-shade{fill:#f8cd56}
+.path1 {
+  fill: #fff;
+  stroke: orange;
+  stroke-width: 20;
+}
+ @keyframes svg_move{0%{stroke-dashoffset: 458}100%{stroke-dashoffset: 537}}
+</style>
+<!-- #fd940a -->
+        <!-- Define the pattern -->
+   <pattern id="pattern-cubes" x="0" y="126"
+       patternUnits="userSpaceOnUse" width="126" height="200" viewBox="0 0 10 16"> 
+     
+     <!-- Cube code courtest of SVGeneration: http://www.svgeneration.com/recipes/3D-Cubes/ -->
+     <g id="cube">
+       <!-- We'll apply the `fill` in the CSS for flexibility -->
+       <path class="left-shade" d="M0 0l5 3v5l-5 -3z"  />
+       <path class="right-shade" d="M10 0l-5 3v5l5 -3" />
+     </g>
+  	
+     <!-- Apply the cube shapes -->
+     <use x="5" y="8"   xlink:href="#cube" />
+     <use x="-5" y="8" xlink:href="#cube" />
+   
+   </pattern>
+   
+   <!-- The canvas for our pattern -->
+   <!-- <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-cubes)" /> -->
+
+     <!-- Define the pattern -->
+    <pattern id="pattern-hex" x="0" y="0" width="112" height="190" patternUnits="userSpaceOnUse" viewBox="56 -254 112 190">
+	    
+      <!-- Group the hexagon shapes -->
+      <!-- Each path could have a class for more styling/animating options -->
+      <!-- We're going to control the fill and stroke in the CSS for flexibility -->
+      <g id="hexagon" class="path1">
+        <path d="M168-127.1c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-0.3 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5C167-127,167.5-127.1,168-127.1 L168-127.1z"/>
+        <path d="M112-222.5c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2l-53.4,30.5 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5 C111-222.4,111.5-222.5,112-222.5L112-222.5z"/>
+        <path d="M168-317.8c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-191 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5 C167-317.7,167.5-317.8,168-317.8L168-317.8z"/>
+      </g>
+  
+  </pattern>
+   
+  <!-- The canvas for our pattern -->
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-hex)" />
+  
+
+</svg>

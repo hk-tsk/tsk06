@@ -61,6 +61,7 @@ export interface IContentState {
 }
 
 export interface IUserState {
+    Authorized:boolean,
     Error: string,
     UserName: string,
 }

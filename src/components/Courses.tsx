@@ -3,20 +3,18 @@ import * as $ from 'jquery'
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
-import PagesApi from 'src/apis/PagesApi';
 import { ICourseInfo } from 'src/Entities/Interfaces';
 import { getCourseLoaded, getCourses } from 'src/reducers/CoursesReducer';
 import { ICoursesState } from 'src/Store/AllStates';
 import { IAppState } from 'src/Store/store';
 import '../styles/Courses.scss'
+import ImageComponent from './ImageComponent';
 
 interface IProps {
   // error: string,
   courses: ICourseInfo[],
   loaded: boolean,
 }
-const pagesApi = new PagesApi();
-
 class Courses extends React.Component<IProps, ICoursesState> {
   constructor(props: IProps) {
     super(props);
@@ -29,15 +27,18 @@ class Courses extends React.Component<IProps, ICoursesState> {
     $(el).hide();
   }
   public ShowCourseTitle(event: React.MouseEvent<HTMLImageElement>) {
-    const el = event.currentTarget.nextSibling || new HTMLImageElement();
-    $(el).show();
+    if (event.currentTarget.parentElement) {
+      const el = event.currentTarget.parentElement.nextSibling || new HTMLImageElement();
+      $(el).show();
+    }
+
   }
 
   public render() {
 
     if (!this.props.loaded) {
       return (<div className="ls-row courses-container">
-        <div className="loading">.</div>
+        <div className="loading" />
       </div>)
     }
 
@@ -50,12 +51,19 @@ class Courses extends React.Component<IProps, ICoursesState> {
             <div className="course-item">
               <div className="course-item-header">
                 {
-                  <img src={ pagesApi.GetImageUrl(info.Img ? info.Img : "NotSetImgCourse.svg", "Course")}
-                    // tslint:disable-next-line: jsx-no-lambda
-                    onError={(elem) => elem.currentTarget.className = "img-not-found"}
+                  <ImageComponent name={info.Img ? info.Img : "NotSetImgCourse.svg"}
+                    category="Course" alt={info.Title} imgClassName="category-viewer-item-image"
                     onMouseMove={this.ShowCourseTitle}
-                    onClick={this.ShowCourseTitle}
-                    className="course-item-img" alt={info.Title} />}
+                    onClick={this.ShowCourseTitle} />
+
+                  // <img src={imageManagment.GetImageUrl(info.Img ? info.Img : "NotSetImgCourse.svg", "Course")}
+                  //   // tslint:disable-next-line: jsx-no-lambda
+                  //   onError={(elem) => elem.currentTarget.className = "img-not-found"}
+                  //   onMouseMove={this.ShowCourseTitle}
+                  //   onClick={this.ShowCourseTitle}
+                  //   className="course-item-img" alt={info.Title} />
+
+                }
                 <div className="course-item-title" onMouseLeave={this.HideCourseTitle}><div >{info.Title}</div></div>
               </div>
 

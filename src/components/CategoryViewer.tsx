@@ -82,10 +82,6 @@ class CategoryViewer extends React.Component<ICategoryViewerProps>{
     public componentDidMount() {
 
         this.showOnScrollImag();
-    }
-
-    public componentWillMount() {
-
         this.props.LoadData(this.getCourseName());
 
     }
@@ -98,30 +94,42 @@ class CategoryViewer extends React.Component<ICategoryViewerProps>{
 
     public render() {
         const courseTitle = this.props.Course ? this.props.Course.Title : "";
-        return (<div className="category-viewer-container">
-            <div className="category-viewer-sider">
-                <span>{courseTitle} </span>
-            </div>
-            <div className="category-viewer-body">
-                {
-                    this.props.categories.map((cat, index) => {
-                        return <div className={"category-viewer-item" + this.GetClassNameByImagePosition(cat)} key={index}>
-                            <div className="category-viewer-item-image-continer" >
-                                <ImageComponent name={cat.ImageUrl} category="Category" alt={cat.Title} imgClassName="category-viewer-item-image" />
-                            </div>
-                            <div className="category-viewer-item-content">
-                                <h1 className="category-viewer-title">
-                                    <NavLink to={"/Subject/" + this.getCourseName() + "/" + cat.Name}>{cat.Title}</NavLink>
-                                </h1>
-                                <p>{cat.Description}</p>
-                            </div>
-                        </div>
-                    })
-                }
-            </div>
 
-            {!this.props.loaded ? <div className="loading">.</div> : []}
-        </div>)
+        if (!this.props.loaded) {
+            return (<div className="category-viewer-container">
+                <div className="category-viewer-sider">
+                    <span>{courseTitle} </span>
+                </div>
+                <div className="category-viewer-body">
+                    loading...
+            </div>
+                <div className="loading" />
+            </div>)
+        } else {
+            return (<div className="category-viewer-container">
+                <div className="category-viewer-sider">
+                    <span>{courseTitle} </span>
+                </div>
+                <div className="category-viewer-body">
+                    {
+                        this.props.categories.map((cat, index) => {
+                            return <div className={"category-viewer-item" + this.GetClassNameByImagePosition(cat)} key={index}>
+                                <div className="category-viewer-item-image-continer" >
+                                    <ImageComponent name={cat.ImageUrl} category="Category" alt={cat.Title} imgClassName={"category-viewer-item-image" + (cat.ImageTheme !== 0 ? " image-frame" : "")} />
+                                </div>
+                                <div className="category-viewer-item-content">
+                                    <h1 className="category-viewer-title">
+                                        <NavLink to={"/Subject/" + this.getCourseName() + "/" + cat.Name}>{cat.Title}</NavLink>
+                                    </h1>
+                                    <p>{cat.Description}</p>
+                                </div>
+                            </div>
+                        })
+                    }
+                </div>
+            </div>)
+        }
+
     }
 
     private GetClassNameByImagePosition(cat: ICourseCategories) {

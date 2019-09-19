@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 import { bindActionCreators, Dispatch } from 'redux';
 import { LoginAction } from 'src/actions/UserAction';
 import { getUser, isLogined } from 'src/reducers/UserReducer';
@@ -21,24 +22,32 @@ class Login extends React.Component<ILogInProps>{
 
     public Login() {
         this.props.DoLogIn("userTest", "");
+        if (this.props.IsLogined) {
+            this.setState({ redirected: true })
+        }
     }
 
     public render() {
-        return (<div className="log-in-Container">
-            <form>
-                <div className="form-group">
-                    <label>نام کاربری :</label>
-                    <input type="input" placeholder="نام کاربری را وارد نمایید" />
-                </div>
-                <div className="form-group">
-                    <label>رمز عبور :</label>
-                    <input type="password" />
-                </div>
+        if (this.props.IsLogined) {
+            return <Redirect to="/" />
+        } else {
+            return (<div className="log-in-Container">
+                <form>
+                    <div className="form-group">
+                        <label>نام کاربری :</label>
+                        <input type="input" placeholder="نام کاربری را وارد نمایید" />
+                    </div>
+                    <div className="form-group">
+                        <label>رمز عبور :</label>
+                        <input type="password" />
+                    </div>
 
-                <input type="button" value="ورود" disabled={this.props.IsLogined} onClick={this.Login} />
+                    <input type="button" value="ورود" disabled={this.props.IsLogined} onClick={this.Login} />
 
-            </form>
-        </div>)
+                </form>
+            </div>)
+        }
+
     }
 
 }

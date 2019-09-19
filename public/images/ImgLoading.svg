@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150">
+<style>
+        @keyframes svg_draw{0%{stroke-dasharray:1}100%{stroke-dasharray:10}}
+}
+</style>
+        <circle cx="75" cy="75" r="20" stroke-dasharray="8"
+         fill="rgba(238,142,16,0)" stroke-width="8" stroke="#ee8e10"
+        
+         style="animation: svg_draw 1s linear infinite"/>
+</svg>

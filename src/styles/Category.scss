@@ -12,7 +12,7 @@
     width: 10%;
     max-width: 90px;
     //border: 1px red solid;
-    border-radius:0px 50px 50px 0px;
+    border-radius: 0px 50px 50px 0px;
     font-weight: 800;
     box-shadow: 1em 1em 2em 0.25em rgba(160, 164, 173, 0.66) inset;
     top: 80px;
@@ -44,7 +44,7 @@
     overflow: hidden;
 
     .category-viewer-item {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       width: 100%;
       height: max-content;
       clear: both;
@@ -58,7 +58,7 @@
         .category-viewer-title {
           font-size: 35px;
           color: $fontColor1;
-          margin: 30px;
+          margin-bottom: 30px;
         }
         p {
           font-size: 20px;
@@ -82,16 +82,21 @@
             display: inline-block;
 
             border: 1em solid #fff;
-            border-bottom: 4em solid #fff;
+            // border-bottom: 4em solid #fff;
             border-radius: 0.25em;
-            box-shadow: 1em 1em 2em 0.25em rgba(160, 164, 173, 0.66);
             margin: 2em auto;
             opacity: 0;
             transform: translateY(4em) rotateZ(-8deg);
             transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
             max-width: 600px;
-            width: 90%;
+            // width: 90%;
             will-change: transform, opacity;
+          }
+
+          &.image-frame {
+            img {
+              box-shadow: 1em 1em 2em 0.25em rgba(160, 164, 173, 0.66);
+            }
           }
         }
       }
@@ -162,6 +167,9 @@
           width: 50%;
           float: right;
           height: 100%;
+          .category-viewer-title {
+            margin: 50px;
+          }
         }
 
         .category-viewer-item-image-continer {
@@ -198,22 +206,28 @@
     }
 
     .category-viewer-body {
+      width: calc(100vw - 10vw);
+      padding: 10px;
       .category-viewer-item {
         clear: both;
         &.image-top,
         &.image-left,
         &.image-right {
-          float: none;
+          float: left;
           .category-viewer-item-content {
-            width: 100%;
+            width: 90%;
             padding: 15px;
+            float: left;
             .category-viewer-title {
               margin: 10px;
+              font-size: 25px;
             }
           }
 
           .category-viewer-item-image-continer {
-            width: 100%;
+            width: 90%;
+            padding: 10px;
+            float: left;
             .category-viewer-item-image {
               .is-visible {
                 opacity: 1;

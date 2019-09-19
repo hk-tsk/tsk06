@@ -71,7 +71,7 @@ class Content extends React.Component<IContentProp, {}>{
                 content
             }
 
-            {!this.props.Loaded ? <div className="loading">.</div> : []}
+            {!this.props.Loaded ? <div className="loading" /> : []}
         </div>)
     }
 }

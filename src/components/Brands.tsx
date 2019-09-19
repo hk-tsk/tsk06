@@ -1,10 +1,10 @@
 import * as React from 'react'
-import PagesApi from 'src/apis/PagesApi';
+import {imageManagment} from 'src/apis/ImageApi';
 
-const pagesApi = new PagesApi();
-
-export default class Brands extends React.Component {
-
+interface IBrabdState {
+    imgs: any[];// JSX.Element[]
+}
+export default class Brands extends React.Component<{}, IBrabdState> {
     private brands = [
         {
             ImageName: "Angular.png",
@@ -35,27 +35,48 @@ export default class Brands extends React.Component {
             Name: "VisualStudioCode",
         },
     ];
+    /**
+     *
+     */
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            imgs: []
+        }
+    }
+
+    public async componentWillMount() {
+        const items = await this.loadImages();
+        Promise.all(items).then((data: any[]) => {
+            this.setState({ imgs: data });
+        });
+    }
 
     public render() {
+        const brandList = this.state.imgs || [];
+        if (brandList.length > 0) {
+            return (<div className="brands-container">
+                {
+                    this.brands.map((brand, index) => {
 
-        return (<div className="brands-container">
-            {
-                this.brands.map((brand, index) => {
-                    // return (<div key={index} className="brand-item">
-                    //     <img src={pagesApi.GetImageUrl(brand.ImageName, "Brands")}
-                    //         // tslint:disable-next-line: jsx-no-lambda
-                    //         onError={(elem) => elem.currentTarget.className = "img-not-found"}
-
-                    //         className="course-item-img" alt={brand.Name} /><span>{brand.Name}</span>
-                    return (
-                        <img key={index} src={pagesApi.GetImageUrl(brand.ImageName, "Brands")}
+                        return (<img key={index} src={brandList.find(c=>c.name === brand.Name).data}
                             // tslint:disable-next-line: jsx-no-lambda
-                            onError={(elem) => elem.currentTarget.className = "img-not-found"}
+                            onError={(elem) => elem.currentTarget.className = "img-not-found"} className="course-item-img" alt={brand.Name} />);
+                    })
+                }
+            </div>)
+        } else {
+            return (<div className="brands-container">
+                <div className="loading" />
+            </div>)
+        }
 
-                            className="course-item-img" alt={brand.Name} />
-                    );
-                })
-            }
-        </div>)
+    }
+
+    private async loadImages() {
+        return this.brands.map(async (brand, index) => {
+            const item = await imageManagment.GetImages(brand.ImageName, "Brands");
+            return { name: brand.Name, data: item}
+        });
     }
 }

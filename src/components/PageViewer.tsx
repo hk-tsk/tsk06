@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { connect } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
 import { bindActionCreators, Dispatch } from 'redux';
 import { InitPageAction } from 'src/actions/pageviewerAction';
-import PagesApi from 'src/apis/PagesApi';
+import { imageManagment } from 'src/apis/ImageApi';
 import { IPageViewProps } from 'src/Entities/Interfaces';
 import { getCourses } from 'src/reducers/CoursesReducer';
 import { getPageInfo, getSelectedCategoryTitlePage } from 'src/reducers/PageViewerReducer';
@@ -11,7 +10,6 @@ import { IAppState } from 'src/Store/store';
 import '../styles/PageViewer.scss'
 import Content from './Content';
 
-const pagesApi = new PagesApi();
 
 class PageViewer extends React.Component<IPageViewProps>{
 
@@ -42,14 +40,6 @@ class PageViewer extends React.Component<IPageViewProps>{
                 let bodyContext = "not Found.";
                 if (item) {
                         document.title = item.Title;
-                        // if (this.props.Item && this.props.Item.categories) {
-                        //         caItems = this.props.Item.categories.map((c, index) => {
-                        //                 // tslint:disable-next-line: jsx-no-lambda
-                        //                 return <li key={index} className={this.CategoryIsSelected(c.Name) ? "page-viewer-caterory-selected" : ""}  >
-                        //                         <NavLink to={"/Subject/" + this.getPageName() + "/" + c.Name}>{c.Title}</NavLink>
-                        //                 </li>
-                        //         })
-                        // }
                         bodyContext = item.IntroInfo;
                 }
 
@@ -58,7 +48,7 @@ class PageViewer extends React.Component<IPageViewProps>{
                                 <h3 className="page-viewer-title">{item ? item.Title : ""}
                                 </h3>
                                 <img className="page-viewer-header-img"
-                                        src={pagesApi.GetImageUrl(item && item.Img ? item.Img : "NotSetImgCourse.svg", "Course")}
+                                        src={imageManagment.GetImageUrl(item && item.Img ? item.Img : "NotSetImgCourse.svg", "Course")}
                                         alt="img" />
                         </div>
                         <div className="page-viewer-wrapper">

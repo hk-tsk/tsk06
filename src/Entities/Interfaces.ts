@@ -22,6 +22,7 @@ export interface ICourseCategories {
    Name: string;
    Title: string;
    ImagePosition:number,
+   ImageTheme:number,
    ImageUrl: string;
    Description: string;
 }

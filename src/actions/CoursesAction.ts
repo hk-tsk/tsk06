@@ -9,11 +9,11 @@ import { IntroPagesActionTypes } from './actionTypes';
 
 const pagesApi = new PagesApi();
 
-export const FetchCourses: ActionCreator<
+export const FetchAsyncCourses: ActionCreator<
     ThunkAction<Promise<any>, IIntroPagesState, null, IntroPagesActionTypes>> = () => {
 
         return async (dispatch: Dispatch) => {
-            const response = await pagesApi.GetCourses();
+            const response = await pagesApi.GetAsyncCourses();
 
             if (response instanceof ApiException) {
                 dispatch({
@@ -30,4 +30,34 @@ export const FetchCourses: ActionCreator<
             }
 
         }
+    }
+
+
+export const FetchCourses: ActionCreator<
+    ThunkAction<Promise<any>, IIntroPagesState, null, IntroPagesActionTypes>> = () => {
+
+        return (dispatch: Dispatch) => pagesApi.GetCourses()
+            .then((response: any) => {
+                if (response instanceof ApiException) {
+                    dispatch({
+                        courses: [],
+                        loaded: false,
+                        type: FETCH_COURSES_FAILED,
+                    });
+                }
+                else {
+                    dispatch({
+                        courses: response.data || [],
+                        loaded: true,
+                        type: FETCH_COURSES_SUCCESS,
+                    });
+                }
+            })
+            .catch(error => {
+                dispatch({
+                    courses: [],
+                    loaded: false,
+                    type: FETCH_COURSES_FAILED,
+                });
+            });
     }
