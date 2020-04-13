@@ -3,8 +3,8 @@ import { ContentActions } from 'src/actions/actionTypes';
 import { IContentState } from 'src/Store/AllStates';
 
 const initState: IContentState = {
-    Content: [],
-    Loaded: true,
+    content: [],
+    loaded: true,
 }
 
 export default function ContentReducer(state: IContentState = initState, action: ContentActions) {
@@ -13,17 +13,17 @@ export default function ContentReducer(state: IContentState = initState, action:
         case CONTENT_REQUEST:
             return {
                 ...state,
-                Loaded: false,
+                loaded: false,
             };
         case CONTENT_REQUEST_FAILED:
             return {
                 ...state,
-                Loaded: false,
+                loaded: false,
             };
         case CONTENT_RECEIVE:
             return {
-                Content: action.content,
-                Loaded: true,
+                content: action.content,
+                loaded: true,
             };
         default:
             return state;
@@ -31,5 +31,5 @@ export default function ContentReducer(state: IContentState = initState, action:
 
 }
 
-export const getContentLoaded = (state: IContentState) => state.Loaded;
-export const getContent = (state: IContentState) => state.Content;
+export const getContentLoaded = (state: IContentState) => state.loaded;
+export const getContent = (state: IContentState) => state.content;

@@ -1,15 +1,15 @@
-$folder:"/images";
-$mainBackgroundColor:#ffffff; // rgba(0, 0, 0, 0.5);
-$bkColor1:#ffffff; // rgba(0, 0, 0, 0.5);
-$coloe1:#a5a6f8f0;
-$menuBkColor: black;
+$folder: "/images";
+$mainBackgroundColor: #ffffff; // rgba(0, 0, 0, 0.5);
+$bkColor1: #ffffff; // rgba(0, 0, 0, 0.5);
+$coloe1: #a5a6f8f0;
+$menuBkColor: #004085; // black;
+$menuColor: white; // black;
 $colOffset: 10px;
-$fontColor1:#555555;
-$fontColor2:white;
-$fontColor3:#c6c6c6;
-$dir:rtl;
-$textalign:right;
+$fontColor1: #555555;
+$fontColor2: white;
+$fontColor3: #c6c6c6;
+$dir: rtl;
+$textalign: right;
 $headerHeight: 60px;
 $footerHeight: 50px;
-$footerHeaderHeight:calc(#{$headerHeight} + #{$headerHeight})
-
+$footerHeaderHeight: calc(#{$headerHeight} + #{$headerHeight});

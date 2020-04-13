@@ -10,6 +10,10 @@
   overflow: hidden;
   position: relative;
 
+  .page-viewer-back {
+    text-decoration: none;
+  }
+
   p {
     line-height: 35px;
   }
@@ -22,6 +26,7 @@
     padding-right: 50px;
     height: $pageViewerTitleHeight;
     text-align: center;
+    color: orange;
   }
 
   .page-viewer-header-img {
@@ -43,9 +48,10 @@
     justify-content: space-between;
     overflow-y: auto;
     overflow-x: hidden;
-    height: calc(100vh - #{$headerHeight});
+    height: calc(67vh);
 
     .page-viewer-sidebar {
+      display: none;
       width: 20%;
       height: 20vh;
       min-height: 200px;
@@ -65,7 +71,8 @@
     }
 
     .page-viewer-body {
-      width: 75%;
+      // width: 75%;
+      width: 100%;
       padding: 20px;
 
       font-weight: 500;
@@ -74,6 +81,9 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      h4 {
+        text-align: center;
+      }
       .page-viewer-go-up1 {
         position: sticky;
         display: block;
@@ -84,3 +94,24 @@
   }
 }
 
+@media (max-width: 600px) {
+  .page-viewer-container {
+    .page-viewer-back {
+      top: 60px;
+      left: 15px;
+      // font-size: 14px;
+      width: max-content;
+    }
+    .page-viewer-body {
+      display: block;
+      text-align: justify;
+      padding: 10px;
+    }
+    .page-viewer-header-img {
+      height: 100px;
+      border: 4px rgb(66, 76, 228) solid;
+      right: 20px;
+      top: 30px;
+    }
+  }
+}

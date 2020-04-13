@@ -1,37 +1,38 @@
-import { CONTACT_US_CHANGE_DESC, CONTACT_US_CHANGE_EMAIL, CONTACT_US_CHANGE_NAME } from 'src/actions/actionConstant';
-import { ContactUsActionType } from 'src/actions/actionTypes';
-import { IContacUsState } from 'src/Store/AllStates';
+import {
+  CONTACT_US_SEND,
+  CONTACT_US_SEND_SUCCESS,
+  ContactUsActionType
+} from "src/actions/contactusAction";
+import { IContacUsState } from "src/Store/AllStates";
 
 const initState: IContacUsState = {
-    Desc: "",
-    Email: "",
-    Name: "",
-
+  desc: "",
+  email: "",
+  formErrors: {},
+  formValid: true,
+  name: "",
+  // tslint:disable-next-line: object-literal-sort-keys
+  sent: false,
 };
 
-export function ContactUsProducer(state: IContacUsState = initState, action: ContactUsActionType) {
-
-    switch (action.type) {
-        case CONTACT_US_CHANGE_NAME:
-            return {
-                ...state,
-                Name: action.Name,
-            }
-        case CONTACT_US_CHANGE_EMAIL:
-            return {
-                ...state,
-                Email: action.Email,
-            }
-        case CONTACT_US_CHANGE_DESC:
-            return {
-                ...state,
-                Desc: action.Desc,
-            }
-        default:
-            return state;
-    }
+export function ContactUsProducer(
+  state: IContacUsState = initState,
+  action: ContactUsActionType
+) {
+  switch (action.type) {
+    case CONTACT_US_SEND:
+      return {
+        ...state,
+        sent: false
+      };
+    case CONTACT_US_SEND_SUCCESS:
+      return {
+        ...state,
+        sent: true
+      };
+    default:
+      return state;
+  }
 }
 
-export const getName = (state: IContacUsState) => state.Name;
-export const getEmail = (state: IContacUsState) => state.Email;
-export const getDesc = (state: IContacUsState) => state.Desc;
+export const getContactusSent = (state: IContacUsState) => state.sent;

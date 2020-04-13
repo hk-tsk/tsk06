@@ -1,18 +1,35 @@
 @import "Base.scss";
 @import "variables.scss";
 
+$courseItemHeight: 380px;
+$courseItemHeightWithMargin: calc(#{$courseItemHeight} + 10px);
+
 .courses-container {
   position: relative;
   background-color: $bkColor1;
   color: $fontColor1;
   height: max-content;
   clear: both;
-
+  min-height: $courseItemHeightWithMargin;
+  padding-bottom: 4px;
+  display: block;
+  margin-bottom: 10px;
+  h1{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    color: $menuBkColor;
+  }
+  // linear-gradient(184deg, #ffc1079e, transparent)
   .course-item {
-    @extend .ls-col-item;
-    width: 330px;
-    height: 430px;
-    padding: 30px;
+    // @extend .ls-col-item;
+    text-align: center;
+
+    width: 95%; // 330px;
+    max-width: 330px;
+    height: $courseItemHeight;
+    padding: 25px 20px 25px 20px;
     display: inline-block;
     position: relative;
     .course-item-header {
@@ -23,51 +40,81 @@
       .course-item-img,
       img {
         display: inline-block;
+        width: 50%;
+
+        ////////////////////
+
+        opacity: 0;
+        transform: translateY(-6em);
+        transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.8s 0.25s ease-out;
+        will-change: transform, opacity;
+      }
+
+      .is-visible {
+        opacity: 1;
+        transform: translateY(0em);
       }
 
       .course-item-title {
-        border-radius: 50px;
-        display: none;
+        border-radius: 20px;
+        display: block;
         position: absolute;
         width: 100%;
         height: 100%;
         top: 0px;
-        z-index: 1000;
-        background-color: rgba(0, 123, 255, 0.16);
+        z-index: 5;
+       // background-color: rgba(113, 180, 252, 0.16);
         color: #050d7f; //rgb(66, 76, 228);
         text-align: center;
-        padding-top: 35px;
-        div {
-          display: inline-block;
+        padding-top: 0px;
+        .course-item-title-text {
+          display: none;
           font-size: 32px;
           font-weight: 800;
           font-style: italic;
         }
       }
+
+      .course-item-title:hover .course-item-title-text {
+        display: block;
+
+      }
+
+      .course-item-title:hover  {
+        display: block;
+        background-color: rgba(113, 180, 252, 0.16);
+
+      }
     }
 
     .course-item-info {
-      text-align: justify;
+      width: 100%;
+      text-align: center;
       color: $fontColor1;
-      font-size: 20px;
-      height: max-content;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 30px;
+      // height: max-content;
+      max-height: 115px;
+      padding: 5px;
       padding-top: 20px;
+      overflow: hidden;
     }
 
     .course-item-link {
-      text-align: left;
-      width: 100%;
-      padding: 30px;
-      font-size: 20px;
+      text-align: right;
+      padding-right: 10px;
+      font-size: 16px;
+      font-weight: 600;
       position: absolute;
-      bottom: 10px;
-      left: 15px;
+      bottom: 35px;
+      //right: 25px;
+      width: 100%;
       a {
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(0, 0, 255, 0.377);
+        color: blue;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        // box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(0, 0, 255, 0.377);
         border-radius: 30px;
       }
     }
@@ -76,15 +123,28 @@
 
 @media (max-width: 600px) {
   .courses-container {
+    h1{
+      font-size: 28px;
+      padding: 6px;
+    }
     .course-item {
-      padding: 15px;
-      padding-bottom: 7px;
+      margin: 10px;
+      padding: 15px 10px 15px 10px;
       height: max-content;
+      min-height: 310px;
+      .course-item-header {
+        height: 140px;
+        overflow: hidden;
+
+        .course-item-img,
+        img {
+          width: 40%;
+        }
+      }
       .course-item-link {
-        position: relative;
-        padding-top: 45px;
-        padding-bottom: 1px;
-        padding-left: 5px;
+        position: absolute;
+        bottom: 10px;
+        width: 90%;
       }
     }
   }

@@ -1,4 +1,3 @@
-// import axios from 'axios'
 import { ActionCreator, Dispatch } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 import { ApiException } from 'src/apis/ApiException';
@@ -41,7 +40,7 @@ export const FetchCourses: ActionCreator<
                 if (response instanceof ApiException) {
                     dispatch({
                         courses: [],
-                        loaded: false,
+                        loaded: true,
                         type: FETCH_COURSES_FAILED,
                     });
                 }

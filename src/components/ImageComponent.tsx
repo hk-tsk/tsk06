@@ -67,7 +67,7 @@ export default class ImageComponent extends React.Component<IImageProps, IImageS
                     src={imgSrc} alt={alt} /></div>)
         } else {
             return (<div className={this.props.imgClassName} >
-                <div className="img-loading" />
+                <div className="img-loading1" />
             </div>)
         }
 

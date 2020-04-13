@@ -1,7 +1,6 @@
-
 @import "variables.scss";
 
-h3{
+h3 {
   font-size: 30px;
   font-weight: 800;
 }
@@ -14,16 +13,18 @@ h3{
 
 .ls-row {
   width: 100%;
-  float: left;
+  float: right;
   text-align: center;
   clear: both;
-
+  overflow: hidden;
+  margin: 1px;
   %ls-base-col {
-    float: left;
+    float: right;
     height: max-content;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    // padding-top: 20px;
+    // padding-bottom: 20px;
     text-align: center;
+    overflow: hidden;
   }
 
   %ls-base-item {
@@ -31,8 +32,18 @@ h3{
     text-align: center;
     height: max-content;
   }
+
+  .ls-col-1 {
+    width: calc(100% - 10px);
+    @extend %ls-base-col;
+
+    .ls-col-item {
+      @extend %ls-base-item;
+    }
+  }
+
   .ls-col-2 {
-    width: calc(100vw / 2 - 10px);
+    width: calc(100% / 2 - 10px);
     @extend %ls-base-col;
 
     .ls-col-item {
@@ -41,7 +52,7 @@ h3{
   }
 
   .ls-col-3 {
-    width: calc(100vw / 3 - 10px);
+    width: calc(100% / 3 - 10px);
     @extend %ls-base-col;
     .ls-col-item {
       @extend %ls-base-item;
@@ -51,7 +62,7 @@ h3{
   .ls-col-4,
   .ls-col-sm-4,
   .ls-col-bg-4 {
-    width: calc(100vw / 4 - 10px);
+    width: calc(100% / 4 - 10px);
     @extend %ls-base-col;
     .ls-col-item {
       @extend %ls-base-item;
@@ -62,7 +73,7 @@ h3{
 @media (max-width: 1150px) {
   .ls-row {
     .ls-col-bg-4 {
-      width: calc(100vw / 3 - 10px);
+      width: calc(100% / 3 - 10px);
     }
   }
 }
@@ -71,7 +82,7 @@ h3{
   .ls-row {
     .ls-col-4,
     .ls-col-bg-4 {
-      width: calc(100vw / 3 - 10px);
+      width: calc(100% / 3 - 10px);
     }
   }
 }
@@ -81,11 +92,11 @@ h3{
     .ls-col-4,
     .ls-col-3,
     .ls-col-bg-4 {
-      width: calc(100vw / 2 - 10px);
+      width: calc(100% / 2 - 10px);
     }
 
     .ls-col-sm-4 {
-      width: calc(100vw / 3 - 10px);
+      width: calc(100% / 3 - 10px);
     }
   }
 }
@@ -98,7 +109,7 @@ h3{
     }
     .ls-col-4,
     .ls-col-sm-4 {
-      width: calc(100vw / 2 - 10px);
+      width: calc(100% / 2 - 10px);
     }
   }
 }

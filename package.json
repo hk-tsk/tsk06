@@ -2,8 +2,9 @@
   "name": "ls_app_ts",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hk-webapp.github.io/ReactSampleDemo/",
+  "homepage": "http://tasksources.com/",
   "dependencies": {
+    "@babel/polyfill": "^7.6.0",
     "@types/jquery": "^3.3.30",
     "@types/react-redux": "^7.1.1",
     "@types/react-router-dom": "^4.3.4",
