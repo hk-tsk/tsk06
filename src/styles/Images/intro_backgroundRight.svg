@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="380">
+   <style>
+      .path1{stroke:#00f;stroke-width:1;stroke-dasharray:8;stroke-opacity:0.4}
+   </style>
+   <g>
+      <line x1="502" x2="1200" y1="260" y2="260" class="path1"/>
+      <line x1="502" x2="502" y1="260" y2="370" class="path1"/>
+      <line x1="100" x2="100" y1="150" y2="0" class="path1"/>
+      <line x1="0" x2="100" y1="150" y2="150" class="path1"/>
+      <line x1="400" x2="400" y1="100" y2="-10" class="path1"/>
+      <line x1="400" x2="1200" y1="100" y2="100" class="path1"/>
+      <line x1="0" x2="200" y1="312" y2="312" class="path1"/>
+      <line x1="200" x2="200" y1="312" y2="612" class="path1"/>
+   </g>
+   <g>
+      <g>
+         <line x1="400" x2="300" y1="150" y2="100" class="path1"/>
+         <line x1="200" x2="300" y1="150" y2="100" class="path1"/>
+         <line x1="200" x2="300" y1="150" y2="200" class="path1"/>
+         <line x1="400" x2="300" y1="150" y2="200" class="path1"/>
+      </g>
+      <line x1="200" x2="200" y1="150" y2="260" class="path1"/>
+      <line x1="300" x2="300" y1="200" y2="310" class="path1"/>
+      <line x1="400" x2="400" y1="150" y2="255" class="path1"/>
+      <g>
+         <line x1="200" x2="300" y1="260" y2="310" class="path1"/>
+         <line x1="400" x2="300" y1="255" y2="310" class="path1"/>
+      </g>
+   </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25">
+    <g stroke-width="3" fill="rgba(255, 255, 255, 0)">
+        <circle r="5" cx="10" cy="10" stroke="grey"/>
+        <circle r="8" cx="10" cy="23" stroke="grey"/>
+<!--<circle r="17" cx="18" cy="23" stroke="grey" stroke-width="1" fill="rgba(255, 255, 255, 0)"/>-->
+    </g>
+</svg>

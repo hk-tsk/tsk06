@@ -1,0 +1,104 @@
+@import "variables.scss";
+
+.article-viewer-container {
+  width: 100%;
+  padding: 15px;
+  overflow: hidden;
+  min-height: calc(100vh - #{$footerHeaderHeight});
+
+  .article-viewer-course {
+    padding: 20px;
+    font-size: 22px;
+    text-align: center;
+    color: blue;
+    a {
+      color: inherit;
+    }
+  }
+
+  .article-viewer-title {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+  .article-viewer-content {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .content-content {
+    font-size: 16px;
+  }
+
+  .content-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .content-code {
+    background-color: rgb(63, 61, 61);
+    color: black;
+    direction: ltr;
+    text-align: left;
+    padding: 10px;
+
+    .code-line {
+      line-height: 10px;
+      .code-line-number {
+        padding-right: 5px;
+        width: 30px;
+        color: #231d1d;
+        direction: ltr;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman" !important;
+      }
+    }
+  }
+
+  .article-viewer-links {
+    width: 100%;
+    padding: 20px 10px 20px 10px;
+    overflow: hidden;
+    font-size: 14px;
+    .article-viewer-nextlink {
+      float: left;
+      max-width: 180px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .article-viewer-prelink {
+      float: right;
+      max-width: 180px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .article-viewer-container {
+    .article-viewer-course {
+      padding: 10px;
+      font-size: 20px;
+    }
+
+    .article-viewer-title {
+      font-size: 18px;
+    }
+    .article-viewer-content {
+      font-size: 14px;
+    }
+
+    .content-content {
+      font-size: 16px;
+    }
+
+    .content-title {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+@import "variables.scss";
+
+.category-articels-container {
+  width: 100%;
+  direction: rtl;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: 500px;
+  .category-articels-course {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    padding: 15px;
+    color: black;
+  }
+  .category-articels-header {
+    width: 100%;
+    list-style: none;
+    text-align: right;
+    display: inline-block;
+    font-weight: 800;
+    // border: 1px blue solid;
+    padding: 0px;
+    margin: 0px;
+    position: sticky;
+    background-color: black; // rgb(216, 216, 252);
+    color: #ffc107;
+
+    a {
+      color: #ffc107;
+    }
+    .article-count {
+      color: red;
+      padding: 5px;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  }
+
+  .category-articels-category,
+  .category-articels-category-title {
+    padding: 5px 10px 5px 10px;
+    float: right;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .category-articels-category-title {
+    color: white;
+    cursor: inherit;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .category-articels-body {
+    padding-top: 50px;
+    list-style: none;
+    width: 100%;
+    // max-width: 200px;
+    // min-width: 180px;
+    direction: inherit;
+    padding: 0px;
+    margin: 0px;
+    height: max-content;
+    max-height: 420px;
+    overflow: hidden;
+    overflow-y: auto;
+    li {
+      text-align: right;
+      padding: 0px;
+    }
+
+    .category-articels-item {
+      padding-bottom: 30px;
+    }
+    .category-articels-item-title {
+      font-size: 20px;
+      font-weight: 800;
+      padding: 5px;
+      padding-right: 20px;
+      font-style: italic;
+      // background-color: #ffc107;
+      color: #ffc107;
+      border-bottom: 2px #ffc107 dotted;
+    }
+
+    .article-count {
+      color: red;
+      padding: 0px;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .category-articels-container {
+    min-height: calc(100vh - #{$footerHeaderHeight});
+
+    .category-articels-course {
+      font-size: 22px;
+      padding: 10px;
+    }
+
+    .category-articels-body {
+      padding-top: 0px;
+      max-height: calc(85vh - #{$footerHeaderHeight});
+    }
+  }
+}
